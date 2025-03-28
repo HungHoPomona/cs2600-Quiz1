@@ -23,3 +23,18 @@ static PtrToEmployee searchEmployeeTable(PtrToConstEmployee ptr, int tableSize, 
 static int compareEmployeeNumber(const void *targetPtr, PtrToConstEmployee tableValuePtr) {
     return *(const long *)targetPtr != tableValuePtr->IDnumber;
 }
+
+static int compareEmployeeName(const void *targetPtr, PtrToConstEmployee tableValuePtr) {
+    return strcmp((const char *)targetPtr, tableValuePtr->name);
+}
+
+// Add implementation for searchEmployeeBySalary
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, double targetSalary) {
+    PtrToConstEmployee endPtr = ptr + tableSize;
+    for (; ptr < endPtr; ptr++) {
+        if (ptr->salary == targetSalary)
+            return (PtrToEmployee)ptr;
+    }
+    return NULL;
+}
+
