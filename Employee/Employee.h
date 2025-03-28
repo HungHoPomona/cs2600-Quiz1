@@ -14,5 +14,5 @@ typedef const Employee *PtrToConstEmployee;
 PtrToEmployee searchEmployeeByNumber(PtrToConstEmployee ptr, int size, long number);
 PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int size, const char *name);
 PtrToEmployee searchEmployeeByPhoneNumber(PtrToConstEmployee ptr, int size, const char *phoneNumber);
-
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int size, double salary);
 #endif // EMPLOYEE_H

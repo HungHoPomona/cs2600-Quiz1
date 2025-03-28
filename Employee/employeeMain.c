@@ -4,7 +4,7 @@
 #include "Employee.h"
 
 // Compile using the following command: 
-// gcc employeeMain.c employeeTable.c employeeOne.c
+// gcc employeeMain.c employeeTable.c employeeOne.c employeeTwo.c -o employeeProgram
 
 int main(void) {
     // Function declarations defined in employeeOne.c
@@ -63,6 +63,21 @@ int main(void) {
         printf("Employee with phone number %s is in record %td\n", searchPhone, matchPtr - EmployeeTable);
     else
         printf("Employee with phone number %s is NOT found in the record\n", searchPhone);
+
+    // Search by salary
+    double searchSalary = 8.78;
+    matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, searchSalary);
+    if (matchPtr != NULL)
+        printf("Employee with salary %.2f is in record %td\n", searchSalary, matchPtr - EmployeeTable);
+    else
+        printf("Employee with salary %.2f is NOT found in the record\n", searchSalary);
+
+    searchSalary = 10.00;
+    matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, searchSalary);
+    if (matchPtr != NULL)
+        printf("Employee with salary %.2f is in record %td\n", searchSalary, matchPtr - EmployeeTable);
+    else
+        printf("Employee with salary %.2f is NOT found in the record\n", searchSalary);
 
     return EXIT_SUCCESS;
 }
